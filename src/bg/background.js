@@ -1,9 +1,3 @@
-// if you checked "fancy-settings" in extensionizr.com, uncomment this lines
-
-// var settings = new Store("settings", {
-//     "sample_setting": "This is how you use Store.js to remember values"
-// });
-
 function fetchFeeds(callback) {
   console.log('fetching feeds');
 
@@ -61,36 +55,3 @@ function extractSubscriptions() {
 }
 
 extractSubscriptions();
-
-
-// function readHistoryItems() {
-//   var visits = [];
-//
-//   chrome.history.search({ 'text': '', startTime: 0, maxResults: 10000 }, function (historyItems) {
-//     console.log(historyItems.length);
-//
-//     var urls = historyItems.map(function (historyItem) { return historyItem.url });
-//
-//     (function getVisits() {
-//       console.log('getting visits (again)');
-//
-//       var url = urls.pop();
-//
-//       if (url == null) {
-//         console.log('our work here is done');
-//         console.log(visits.length);
-//
-//         return;
-//       }
-//
-//       chrome.history.getVisits({ url: url }, function (visitItems) {
-//         visitItems.forEach(function (visitItem) {
-//           visits.push({ id: visitItem.id, url: url, referringVisitId: visitItem.referringVisitId });
-//         });
-//
-//         // do it again -- but not too fast
-//         setTimeout(getVisits, 50);
-//       });
-//     })();
-//   });
-// }
