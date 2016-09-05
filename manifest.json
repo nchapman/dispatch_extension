@@ -2,14 +2,13 @@
   "name": "Dispatch",
   "version": "0.1.0",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
-  "homepage_url": "http://extensionizr.com",
+  "description": "news that works for you",
+  "homepage_url": "https://dispatch-news.herokuapp.com/",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "16": "icons/dispatch16.png",
+    "48": "icons/dispatch48.png",
+    "128": "icons/dispatch128.png"
   },
-  "default_locale": "en",
   "background": {
     "scripts": [
       "src/bg/background.js"
@@ -17,14 +16,13 @@
     "persistent": true
   },
   "permissions": [
-    "history",
-    "http://localhost:5000/*"
+    "history"
   ],
   "content_scripts": [
     {
       "matches": [
-        "https://dispatch-news.herokuapp.com/*",
-        "http://localhost:5000/*"
+        "*://dispatch-news.herokuapp.com/*",
+        "*://localhost/*"
       ],
       "js": [
         "src/inject/inject.js"
