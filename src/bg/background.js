@@ -17,6 +17,7 @@ function updateSubscriptions(subscriptions) {
 
   var xhr = new XMLHttpRequest();
   xhr.open('POST', 'http://localhost:5000/subscriptions/import.json', true);
+  xhr.withCredentials = true;
   xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   xhr.send('subscriptions=' + JSON.stringify(subscriptions));
 }
