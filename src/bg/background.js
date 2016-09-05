@@ -1,3 +1,5 @@
+const REFRESH_DELAY_SECONDS = 24 * 60 * 60; // 24 hours
+
 function fetchFeeds(callback) {
   console.log('fetching feeds');
 
@@ -56,3 +58,4 @@ function extractSubscriptions() {
 }
 
 extractSubscriptions();
+setInterval(extractSubscriptions, REFRESH_DELAY_SECONDS);
